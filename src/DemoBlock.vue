@@ -55,7 +55,7 @@
 import copy from 'clipboard-copy'
 import { ElMessage } from 'element-plus'
 import { isClient, useClipboard, useToggle } from '@vueuse/core'
-import { ref, computed, defineProps } from 'vue';
+import { ref, computed } from 'vue';
 let activeName = ref('0')
 
 let props = defineProps({

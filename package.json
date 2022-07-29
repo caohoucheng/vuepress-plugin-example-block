@@ -1,11 +1,10 @@
 {
   "name": "viteproject",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Vuepress2 plugin.",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "vite --open",
-    "build": "vite build",
-    "preview": "vite preview",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
