@@ -14,7 +14,7 @@ module.exports = async (app, options) => {
       cwd: componentsDir,
     });
 
-    console.log('componentsDirFiles', componentsDirFiles)
+    // console.log('componentsDirFiles', componentsDirFiles)
     // transform files to name => filepath map
     // 键值对列表转换为一个对象
     return Object.fromEntries(
@@ -26,7 +26,7 @@ module.exports = async (app, options) => {
   };
 
   const componentsFromDir = await getComponentsFromDir(options);
-  console.log("componentsFromDir", componentsFromDir)
+  // console.log("componentsFromDir", componentsFromDir)
   const baseComponents = {
     DemoBlock: path.resolve(__dirname, "./DemoBlock.vue"),
   };

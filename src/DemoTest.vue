@@ -2,6 +2,7 @@
   <div class="demo-block ddddd" :class="[blockClass]">
     <!-- 演示区 -->
     <div class="demo-content">
+      111
       <component :ref="componentName" :is="componentName" v-if="componentName" v-bind="$attrs" />
       <slot name="source"></slot>
     </div>

@@ -13,13 +13,11 @@ const highlight = require("./highlight");
 const DEMO_COMPONENT_NAME = `demo-block`
 
 module.exports = (options) => {
-  // console.log('options', options)
   const { component = DEMO_COMPONENT_NAME, componentsDir, getComponentName } = options;
   const componentName = component
     .replace(/^\S/, (s) => s.toLowerCase())
     .replace(/([A-Z])/g, "-$1")
     .toLowerCase();
-  // console.log(chalk.yellow('componentName:', componentName))
   return (md) => {
     md.use(mdContainer, "demo", {
       validate(params) {
@@ -30,7 +28,6 @@ module.exports = (options) => {
 
         if (tokens[idx].nesting === 1) {
           const description = m && m.length > 1 ? m[1] : "";
-          // console.log(chalk.yellow('description:', description, localMd.render(description)))
           const sourceFileToken = tokens[idx + 2];
           //组件名
           let sourceFile = "";
@@ -41,7 +38,6 @@ module.exports = (options) => {
           ) {
             sourceFile = sourceFileToken.children[0].content;
           }
-          // console.log(chalk.yellow('sourceFile:', sourceFile))
           //组件代码
           let source = "";
           if (sourceFileToken.type === "inline") {
@@ -61,16 +57,12 @@ module.exports = (options) => {
                 source += tokens[i].content;
               }
             }
-            console.log('@@@@@@', md.utils.escapeHtml(source))
             const content = tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : '';
-            // return `<demo-test>
-            //   ${description ? `<div>${localMd.render(description)}</div>` : ''}
-            //   <!--element-demo: ${renderDemoBlock(content, localMd)}:element-demo-->
-            // `;
+            console.log('@@@@@@source', md.utils.escapeHtml(source))
+            console.log('@@@@@@content', content)
           }
           // console.log(chalk.yellow('source:', source))
           const cptName = getComponentName(sourceFile);
-          // console.log(chalk.yellow('cptName:', cptName))
           const encodeOptionsStr = encodeURI(JSON.stringify(options));
           let result = `<${componentName} 
           componentName="${cptName}" 
@@ -83,7 +75,6 @@ module.exports = (options) => {
         `;
           return result;
         }
-        // return '</demo-test>';
         return `</${componentName}>`;
       },
     });
