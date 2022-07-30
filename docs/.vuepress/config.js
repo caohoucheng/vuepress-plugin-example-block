@@ -4,9 +4,7 @@ const resolve = (_path) => {
   return path.resolve(__dirname, _path)
 }
 const { defaultTheme } = require('@vuepress/theme-default')
-// const blockDemo = require("vuepress-plugin-demo-block-vue3");
-const blockDemo = require("./../../src");
-const { containerPlugin } = require('@vuepress/plugin-container')
+const exampleDemo = require("./../../src");
 var md = require('markdown-it')();
 
 module.exports = {
@@ -14,15 +12,14 @@ module.exports = {
   base: "/my-components/",
   // dest: "./docs/.vuepress/build",
   lang: "zh-CN",
-  plugins: [
-    [
-      blockDemo({
-        path: __dirname
-      })
-    ],
-  ],
   title: "my-components",
   description: "my-components DOCS",
+  plugins: [
+    exampleDemo({
+      path: __dirname,
+      // dir: "../components"
+    })
+  ],
   theme: defaultTheme({
     navbar: [
       { text: '首页', link: '/' },
