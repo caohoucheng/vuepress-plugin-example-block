@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import copy from 'clipboard-copy'
+import copy from './utils/copy'
 import { ElMessage } from 'element-plus'
 import { isClient, useClipboard, useToggle } from '@vueuse/core'
 import { ref, computed } from 'vue';
@@ -103,7 +103,7 @@ const copyCode = async () => {
     copy(decodeURIComponent(props.rawSource))
     ElMessage.success('复制成功')
   } catch (e) {
-    $ElMessa.error(e.message)
+    ElMessage.error(e.message)
   }
 }
 </script>
