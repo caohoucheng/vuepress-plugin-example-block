@@ -3,6 +3,7 @@ const fs = require('fs');
 const chalk = require("chalk");
 const { hash, path } = require("@vuepress/utils");
 const chokidar = require("chokidar");
+const renderDemoBlock = require('./utils/render')
 // markdown type重写
 const markDownContainers = require('./utils/markdown')
 // 动态加载组件示例组件
@@ -55,7 +56,20 @@ module.exports = (options = {}) => {
       },
       // 添加额外的 markdown-it 插件
       extendsMarkdown: (md) => {
+        // console.log('11111111111111md',md)
         md.use(markDownContainers(options, md));
+        
+        // const id = setInterval(() => {
+        //   const render = md.render;
+        //   if (typeof render.call(md, '') === 'object') {
+        //     md.render = (string) => {
+        //       console.log('@@@result@@@@@@@@@@@@@@@@',result)
+        //       result.dataBlockString = `${script}\n${style}\n${result.dataBlockString}`;
+        //       return result;
+        //     }
+        //     clearInterval(id);
+        //   }
+        // }, 10);
       },
       // 启动开发服务器并开始监听文件修改后被调用
       onWatched: (app, watchers, restart) => {
