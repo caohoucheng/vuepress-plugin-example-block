@@ -37,7 +37,7 @@ module.exports = {
 
 ### 2.创建`examples`组件文件夹(`dir`参数值),并创建button/base.vue组件
 
-![路径](https://raw.githubusercontent.com/caohoucheng/vuepress-plugin-example-block/dev/src/Img/readme/examplePath.jpg)
+![路径](https://raw.githubusercontent.com/caohoucheng/vuepress-plugin-example-block/dev/Img/readme/examplePath.jpg)
 
 `base.vue代码`
 
@@ -96,4 +96,4 @@ button/base
 
 ## 效果预览
 
-![效果](https://raw.githubusercontent.com/caohoucheng/vuepress-plugin-example-block/dev/src/Img/readme/demo.jpg)
+![效果](https://raw.githubusercontent.com/caohoucheng/vuepress-plugin-example-block/dev/Img/readme/demo.jpg)
