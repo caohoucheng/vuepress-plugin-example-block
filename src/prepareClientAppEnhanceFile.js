@@ -30,14 +30,10 @@ module.exports = async (app, options) => {
   const baseComponents = {
     DemoBlock: path.resolve(__dirname, "./DemoBlock.vue"),
   };
-  const DemoTest = {
-    DemoTest: path.resolve(__dirname, "./DemoTest.vue"),
-  };
   const componentsMap = {
     ...componentsFromDir,
     ...options.components,
     ...baseComponents,
-    ...DemoTest
   };
   const content = `\
     import { defineClientConfig } from '@vuepress/client'
