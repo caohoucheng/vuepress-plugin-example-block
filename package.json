@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-example-block",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "Vuepress2 plugin.",
   "main": "lib/index.es.js",
