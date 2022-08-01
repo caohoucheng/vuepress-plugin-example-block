@@ -1,9 +1,9 @@
 {
   "name": "vuepress-plugin-example-block",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "private": false,
   "description": "Vuepress2 plugin.",
-  "main": "lib/index.es.js",
+  "main": "src/index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -58,7 +58,7 @@ module.exports = (options = {}) => {
       extendsMarkdown: (md) => {
         // console.log('11111111111111md',md)
         md.use(markDownContainers(options, md));
-        
+
         // const id = setInterval(() => {
         //   const render = md.render;
         //   if (typeof render.call(md, '') === 'object') {
