@@ -6,9 +6,9 @@
 
 ## 注意事项(必读)
 
-1.使用之前请先安装并了解Vuepress[( 点我查看 )](https://v2.vuepress.vuejs.org/zh/)
+1.⚡使用之前请先安装并了解Vuepress[( 点我查看 )](https://v2.vuepress.vuejs.org/zh/)
 
-2.建议安装Vuepress `^2.0.0-beta.49` 以上版本
+2.⚡建议安装Vuepress `^2.0.0-beta.49` 以上版本
 
 ## 安装
 
@@ -35,9 +35,9 @@ module.exports = {
 }
 ```
 
-### 2.创建`dir:'../examples'`对应的组件文件夹,并创建button/base.vue组件
+### 2.创建`examples`组件文件夹(`dir`参数值),并创建button/base.vue组件
 
-![路径](./src/img/readme/examplePath.jpg)
+![路径](https://raw.githubusercontent.com/caohoucheng/vuepress-plugin-example-block/dev/src/Img/readme/examplePath.jpg)
 
 `base.vue代码`
 
@@ -96,4 +96,4 @@ button/base
 
 ## 效果预览
 
-![路径](./src/img/readme/demo.jpg)
+![效果](https://raw.githubusercontent.com/caohoucheng/vuepress-plugin-example-block/dev/src/Img/readme/demo.jpg)
