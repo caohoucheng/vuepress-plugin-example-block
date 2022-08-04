@@ -39,10 +39,7 @@ module.exports = {
 
 ![路径](https://raw.githubusercontent.com/caohoucheng/vuepress-plugin-example-block/dev/Img/readme/examplePath.jpg)
 
-`base.vue代码`
-
-此处使用的是element-plus组件
-如何在vuepress引入element-plus,请查看vuepress客户端配置[( 点我查看 )](https://v2.vuepress.vuejs.org/zh/advanced/cookbook/usage-of-client-config.html#enhance)
+`代码如下(base.vue)`
 
 ```html
 <template>
@@ -62,6 +59,9 @@ const type = ref('primary')
 </script>
 ```
 
+此处使用的是element-plus组件
+如何在vuepress引入element-plus,请查看vuepress客户端配置[( 点我查看 )](https://v2.vuepress.vuejs.org/zh/advanced/cookbook/usage-of-client-config.html#enhance)
+
 ### 3.使用组件组件示例
 
 在你的vuepress任意 md 页面 文件中都可使用
@@ -69,8 +69,8 @@ const type = ref('primary')
 **语法**
 
 ```
-::: demo `介绍`
-button/base
+::: demo `介绍内容`
+组件路径
 :::
 ```
 

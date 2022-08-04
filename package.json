@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-example-block",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "private": false,
   "keywords": ["vuepress2", "vue3", "plugin"],
   "description": "Vuepress2 组件演示插件",
