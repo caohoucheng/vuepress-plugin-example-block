@@ -12,22 +12,22 @@
             <div class="code-control">
               <ElTooltip content="复制代码" :show-arrow="false">
                 <ElIcon :size="14" class="op-btn" @click.stop="copyCode">
-                  <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="1em" height="1em"
-                    data-v-65a7fb6c="">
-                    <path fill="currentColor"
-                      d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.007-1H7zM5.003 8L5 20h10V8H5.003zM9 6h8v10h2V4H9v2z">
-                    </path>
+                  <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="1em" height="1em" data-v-65a7fb6c="">
+                    <path
+                      fill="currentColor"
+                      d="M7 6V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-3v3c0 .552-.45 1-1.007 1H4.007A1.001 1.001 0 0 1 3 21l.003-14c0-.552.45-1 1.007-1H7zM5.003 8L5 20h10V8H5.003zM9 6h8v10h2V4H9v2z"
+                    ></path>
                   </svg>
                 </ElIcon>
               </ElTooltip>
 
               <ElTooltip content="查看源代码" :show-arrow="false">
                 <ElIcon :size="16" class="op-btn">
-                  <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="1em" height="1em"
-                    data-v-65a7fb6c="">
-                    <path fill="currentColor"
-                      d="m23 12l-7.071 7.071l-1.414-1.414L20.172 12l-5.657-5.657l1.414-1.414L23 12zM3.828 12l5.657 5.657l-1.414 1.414L1 12l7.071-7.071l1.414 1.414L3.828 12z">
-                    </path>
+                  <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="1em" height="1em" data-v-65a7fb6c="">
+                    <path
+                      fill="currentColor"
+                      d="m23 12l-7.071 7.071l-1.414-1.414L20.172 12l-5.657-5.657l1.414-1.414L23 12zM3.828 12l5.657 5.657l-1.414 1.414L1 12l7.071-7.071l1.414 1.414L3.828 12z"
+                    ></path>
                   </svg>
                 </ElIcon>
               </ElTooltip>
@@ -36,11 +36,9 @@
           <div>
             <div class="description" v-html="decodeDesc" v-if="decodeDesc"></div>
             <div class="code-content" v-html="decoded"></div>
-
           </div>
         </el-collapse-item>
       </el-collapse>
-
     </div>
     <div class="code-hide" v-show="activeName == '1'" @click="activeName = '0'">
       <el-icon>
@@ -52,32 +50,32 @@
 </template>
 
 <script setup>
-import copy from './utils/copy'
-import { ElMessage } from 'element-plus'
-import { isClient, useClipboard, useToggle } from '@vueuse/core'
-import { ref, computed } from 'vue';
-let activeName = ref('0')
+import copy from "./utils/copy"
+import { ElMessage } from "element-plus"
+import { isClient, useClipboard, useToggle } from "@vueuse/core"
+import { ref, computed } from "vue"
+let activeName = ref("0")
 
 let props = defineProps({
   description: {
     type: String,
-    required: true,
+    required: true
   },
   source: {
     type: String,
-    required: true,
+    required: true
   },
   sourceFile: {
     type: String,
-    required: true,
+    required: true
   },
   rawSource: {
     type: String,
-    required: true,
+    required: true
   },
   componentName: {
     type: String,
-    required: true,
+    required: true
   },
   options: {
     type: Object,
@@ -94,14 +92,14 @@ let decodeDesc = computed(() => {
   return decodeURIComponent(props.description)
 })
 let blockClass = computed(() => {
-  return 'demo-select'
+  return "demo-select"
   // return `demo-${this.$route.path.split("/").pop().replace('.html', '')}`;
 })
 
 const copyCode = async () => {
   try {
     copy(decodeURIComponent(props.rawSource))
-    ElMessage.success('复制成功')
+    ElMessage.success("复制成功")
   } catch (e) {
     ElMessage.error(e.message)
   }
@@ -129,7 +127,7 @@ const copyCode = async () => {
   justify-content: flex-end;
   height: 40px;
   box-sizing: border-box;
-
+  background: var(--c-bg);
 
   .op-btn {
     margin: 0 0.5rem;
@@ -152,7 +150,7 @@ const copyCode = async () => {
   justify-content: center;
   border-top: 1px solid var(--c-border);
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: var(--c-bg);
   height: 44px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -179,11 +177,11 @@ const copyCode = async () => {
   }
 
   .code-content {
-    background-color: #f5f7fa;
-    border: solid 1px var(--c-border);
+    background-color: var(--c-bg);
+    // border: solid 1px var(--c-border);
     border-top: 0;
-    margin: -1px;
-    border-radius: 3px;
+    // margin: -1px;
+    // border-radius: 3px;
     overflow: hidden;
     height: auto;
     transition: height 0.2s;
@@ -223,5 +221,12 @@ const copyCode = async () => {
 
 .dark .toten.tag {
   color: var(--c-danger-bg);
+}
+.el-collapse{
+  --el-collapse-header-bg-color:var(--c-border);
+  --el-collapse-border-color:var(--c-border);
+}
+.el-collapse-item__header{
+  border-bottom:1px solid var(--c-border)
 }
 </style>
